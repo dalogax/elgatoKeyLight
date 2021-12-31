@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Elgato",
+		"_postman_id": "7414d19c-c820-cf8a-58da-47e10d6728bc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Status",
+			"request": {
+				"url": "http://{{keyLightIP}}:9123/elgato/lights",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Light on",
+			"request": {
+				"url": "http://192.168.64.124:9123/elgato/lights",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"lights\":\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t\t\"on\":1,\r\n\t\t\t\t\"brightness\": 17,\r\n            \t\"temperature\": 206\r\n\t\t\t}\r\n\t\t],\r\n\t\"numberOfLights\":1\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Light off",
+			"request": {
+				"url": "http://192.168.64.124:9123/elgato/lights",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"lights\":\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t\t\"on\":0,\r\n\t\t\t\t\"brightness\": 17,\r\n            \t\"temperature\": 206\r\n\t\t\t}\r\n\t\t],\r\n\t\"numberOfLights\":1\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
